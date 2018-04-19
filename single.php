@@ -3,10 +3,31 @@
 	<div id="wrapper">
 <?php get_sidebar(); ?>
 		<main>
-<?php if(have_posts()): while(have_posts()):the_post(); ?>
 			<h2>Gallery</h2>
-			<div class="pagination"><p><?php previous_post_link('%link','前の作品'); ?></p><p><?php next_post_link('%link','次の作品'); ?></p></div>
-			<img src="<?php echo CFS()->get('img'); ?>" alt="<?php the_title(); ?>の作品">
+<?php
+	$pageorder = $post->ID;
+	$getallpage = gallerypager();
+	$maxkey = count($getallpage);
+	$key = array_search($pageorder, $getallpage);
+	$prevkey = $key-1;
+	$nextkey = $key+1;
+	$previd = NULL;
+	$nextid = NULL;
+	// echo $prevkey.'/'.$nextkey.'（'.$maxkey.'）';
+	if($prevkey>-1){
+		$previd = $getallpage[$prevkey];
+	}
+	if($nextkey<$maxkey){
+		$nextid = $getallpage[$nextkey];
+	}
+?>
+			<div class="pagination">
+				<p><?php if(isset($previd)): ?><a href="<?php echo get_permalink($previd); ?>" class="prev">前の作品</a><?php endif; ?></p>
+				<p><a href="<?php echo home_url('/').get_post_type_object(get_post_type())->name.'/'; ?>">一覧へ戻る</a></p>
+				<p><?php if(isset($nextid)): ?><a href="<?php echo get_permalink($nextid); ?>" class="next">次の作品</a><?php endif; ?></p>
+			</div>
+<?php if(have_posts()): while(have_posts()):the_post(); ?>
+			<img src="<?php echo wp_get_attachment_image_src(CFS()->get('img'), 'full')[0]; ?>" alt="<?php the_title(); ?>の作品">
 			<section>
 				<div id="infoarea">
 					<h3><?php the_title(); ?><span>の作品</span></h3>

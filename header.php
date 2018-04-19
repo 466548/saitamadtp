@@ -8,12 +8,12 @@
 	<?php wp_head(); ?>
 	<link rel="icon" type="image/x-icon" href="<?php echo common_links(); ?>/img/favicon.ico">
 	<?php
-		if(!is_home()):
-			if(get_post_type() === 'gallery08'):
-				$userArray = array("gallery08" => "saitama");
-				basic_auth($userArray);
-			endif;
-		endif;
+		// if(!is_home()):
+		// 	if(get_post_type() === 'gallery08'):
+		// 		$userArray = array("gallery08" => "saitama");
+		// 		basic_auth($userArray);
+		// 	endif;
+		// endif;
 	?>
 	<script>
 		$(function(){

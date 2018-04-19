@@ -54,7 +54,10 @@
 ?>
 			<section class="galleryarea">
 <?php while($the_query->have_posts()) : $the_query->the_post(); ?>
-				<div<?php if(has_term('horizontal', 'gallerytag')){echo ' class="horizontal"';} ?>><a href="<?php the_permalink(); ?>" ontouchstart=""><img src="<?php echo CFS()->get('img'); ?>" alt="<?php the_title(); ?>の作品"><div><p><?php the_title(); ?><?php $terms = get_the_terms($post->ID,'gallery'); if($terms){?><span>（<?php foreach($terms as $term): echo $term->name; endforeach;?>）</span><?php } ?></p></div></a><!-- <p><?php echo $post->ID; ?></p> --></div>
+				<div<?php if(has_term('horizontal', 'gallerytag')){echo ' class="horizontal"';} ?>><a href="<?php the_permalink(); ?>" ontouchstart="">
+					<img src="<?php echo wp_get_attachment_image_src(CFS()->get('img'), 'medium')[0]; ?>" alt="<?php the_title(); ?>の作品">
+					<div><p><?php the_title(); ?><?php $terms = get_the_terms($post->ID,'gallery'); if($terms){?><span>（<?php foreach($terms as $term): echo $term->name; endforeach;?>）</span><?php } ?></p></div>
+					</a><!-- <p><?php echo $post->ID; ?></p> --></div>
 <?php endwhile; ?>
 			</section>
 			<div class="scroller-status">
