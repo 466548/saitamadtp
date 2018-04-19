@@ -1,0 +1,158 @@
+// main: style.scss
+
+$whitec:#FFFFFF;
+$spacec:#CCCCCC;
+$testc1:rgba(255, 0, 0, 0.2);
+$testc2:rgba(0, 255, 0, 0.2);
+$testc3:rgba(0, 0, 255, 0.2);
+$testc4:rgba(255, 255, 0, 0.2);
+$testc5:rgba(0, 255, 255, 0.2);
+$testc6:rgba(255, 0, 255, 0.2);
+$subc:#777;
+$subfc:#333;
+$linkc:#503f1d;
+$linksubc:#a17317;
+
+$basewdth767:92%;
+$basewdth768:80%;
+$basewdth1025:1024px;
+// $mainmrt:140px;
+
+@mixin fz($size){
+	font-size:$size + 0px;
+	font-size:($size / 10) * 1rem;
+}
+
+.clearfix:after{
+	content:" ";
+	display:block;
+	clear:both;
+}
+
+.inlblct{
+	font-size:0;
+	display:inline-block;
+	vertical-align:top;
+}
+.inlblcm{
+	font-size:0;
+	display:inline-block;
+	vertical-align:middle;
+}
+.inlblcb{
+	font-size:0;
+	display:inline-block;
+	vertical-align:bottom;
+}
+
+.boxsizing{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+.centering{
+	top:50%;
+	left:50%;
+	position:relative;
+	-webkit-transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%);
+	transform:translate(-50%,-50%);
+}
+.imgmask{
+	overflow:hidden;
+	background-color:$spacec;
+	img{
+		@extend .centering;
+	}
+	&.noimg{
+		background-color:lighten($spacec,50%);
+		p{
+			color:$whitec;
+			text-align:center;
+			line-height:1;
+			@extend .centering;
+		}
+	}
+}
+@mixin imgmaskvrt($mskhght, $mskratio){
+	width:floor($mskhght * $mskratio);
+	height:$mskhght;
+	@extend .imgmask;
+	img{
+		width:auto;
+		max-height:$mskhght;
+	}
+}
+@mixin imgmaskhrz($mskwdt, $mskratio){
+	width:$mskwdt;
+	height:floor($mskwdt * $mskratio);
+	@extend .imgmask;
+	img{
+		max-width:$mskwdt;
+		height:auto;
+	}
+}
+
+.bx-wrapper{
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border:none;
+	background-color:transparent;
+	.bx-controls{margin-top:-50px;position:relative;display:block;}
+	.bx-pager{padding-top:0;}
+}
+
+// .bx-wrapper .bx-viewport{
+// 	-moz-box-shadow: none;
+// 	-webkit-box-shadow: none;
+// 	box-shadow: none;
+// 	border:none;
+// 	left: 0px;
+// 	background-color:transparent;
+// 	ul{
+// 		z-index:99;
+// 		/*position:relative;*/
+// 	}
+// }
+// .bx-controls-direction .bx-prev, .bx-controls-direction .bx-next{
+// 	z-index:9999;
+// }
+
+// プラグイン部分
+#stmv-area{
+	font-size:0;
+	box-sizing:border-box;
+	display:inline-block;
+	vertical-align:middle;
+	span{
+		font-size:1.6rem;
+		line-height:1;
+		display:inline-block;
+		vertical-align:middle;
+		&:first-of-type img{
+			// padding:.4rem .6rem;
+			// color:#fff;
+			// background-color:#666;
+			// border-radius:4px;
+			width:60px;
+			height:auto;
+			// opacity:.8;
+			&:hover{
+				// background-color:#000;
+				cursor:pointer;
+			}
+		}
+		&:nth-of-type(2){
+			margin-left:.4rem;
+			padding:.3rem .5rem;
+			border:1px solid #666;
+			border-radius:4px;
+			font-weight:600;
+		}
+	}
+	p{
+		margin-top:.4rem;
+		font-size:1.2rem;
+	}
+}
