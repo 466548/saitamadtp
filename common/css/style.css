@@ -1143,3 +1143,23 @@ footer small {
 	margin-top: 2rem;
 	list-style-type: decimal;
 }
+
+#total table {
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: .4rem .8rem;
+	border: 1px solid #777;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+
+th {
+	color: #503f1d;
+	background-color: rgba(161, 115, 23, 0.7);
+}
+
+td:first-of-type, td:last-of-type {
+	text-align: right;
+}
