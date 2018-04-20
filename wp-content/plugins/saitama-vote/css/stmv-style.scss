@@ -1,0 +1,41 @@
+$testc1:rgba(255, 0, 0, 0.2);
+$testc2:rgba(0, 255, 0, 0.2);
+$testc3:rgba(0, 0, 255, 0.2);
+$testc4:rgba(255, 255, 0, 0.2);
+$testc5:rgba(0, 255, 255, 0.2);
+$testc6:rgba(255, 0, 255, 0.2);
+
+#stmv-area{
+	font-size:0;
+	box-sizing:border-box;
+	span{
+		font-size:.8rem;
+		line-height:1;
+		display:inline-block;
+		vertical-align:middle;
+		&:first-of-type img{
+			// padding:.4rem .6rem;
+			// color:#fff;
+			// background-color:#666;
+			// border-radius:4px;
+			width:60px;
+			height:auto;
+			// opacity:.8;
+			&:hover{
+				// background-color:#000;
+				cursor:pointer;
+			}
+		}
+		&:nth-of-type(2){
+			margin-left:.4rem;
+			padding:.3rem .5rem;
+			border:1px solid #666;
+			border-radius:4px;
+			font-weight:600;
+		}
+	}
+	p{
+		margin-top:.4rem;
+		font-size:.8rem;
+	}
+}
