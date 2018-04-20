@@ -790,6 +790,7 @@ th,td{
 	border:1px solid $subc;
 	@include fz(14);
 }
+/*
 th{
 	color:$linkc;
 	background-color:rgba(161,115,23,.7);
@@ -797,3 +798,4 @@ th{
 td{
 	&:first-of-type, &:last-of-type{text-align:right;}
 }
+*/
