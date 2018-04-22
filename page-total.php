@@ -13,7 +13,7 @@
 	$args = array(
 		'posts_per_page' => -1,
 		'post_type' => 'gallery08',
-		'orderby' => 'meta_value',
+		'orderby' => 'meta_value_num',
 		'order' => 'DESC',
 		'meta_key' => 'stmv_cnt'
 	);
