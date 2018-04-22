@@ -9,10 +9,10 @@
 	<link rel="icon" type="image/x-icon" href="<?php echo common_links(); ?>/img/favicon.ico">
 	<?php
 		if(!is_home()):
-			if(get_post_type() === 'gallery08'):
-				$userArray = array("gallery08" => "saitama");
-				basic_auth($userArray);
-			endif;
+			// if(get_post_type() === 'gallery08'):
+			// 	$userArray = array("gallery08" => "saitama");
+			// 	basic_auth($userArray);
+			// endif;
 			if(is_page('1245')): //Basic認証を掛けたいページID
 				$userArray = array("total" => "gogosaitama"
 			);
