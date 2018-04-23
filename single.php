@@ -41,7 +41,7 @@
 	$votecnt = get_post_meta($post->ID, 'stmv_cnt', true);
 	if($votecnt<1){$votecnt=0;}
 ?>
-				<div id="stmv-area" class="<?php echo get_post_type(); ?>-<?php the_ID(); ?>"><span class="votebutton"><img src="<?php echo common_links(); ?>/img/btn_stmv.png" alt="いいね！"></span><span><?php echo $votecnt; ?></span><p>「いいね！」を投票できるのは2回までです。</p></div>
+				<div id="stmv-area" class="<?php echo get_post_type(); ?>-<?php the_ID(); ?>"><span class="votebutton"><img src="<?php echo common_links(); ?>/img/btn_stmv.png" alt="いいね！"></span><span><?php echo $votecnt; ?></span><p>「いいね！」は1作品1回までです。</p></div>
 			</section>
 <?php endwhile; endif; ?>
 		</main>
