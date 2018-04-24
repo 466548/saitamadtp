@@ -5,6 +5,28 @@
 	<title>さいたまデザインDTP勉強会</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<?php
+	$cmnogpimg = get_template_directory_uri().'/common/img/saitamadtp_ogp.png';
+	if(is_singular('gallery08')):
+		$imgid = get_post_meta($post->ID, 'img', true);
+		$ogpimg = wp_get_attachment_image_src($imgid,'full')[0];
+		$title = get_the_title($post->ID).' | '.esc_html(get_post_type_object(get_post_type())->label).' | '.get_bloginfo('name');
+	else:
+		$ogpimg = $cmnogpimg;
+		$title = get_bloginfo('name').' | '.get_bloginfo('description');
+	endif;
+?>
+	<meta property="og:title" content="<?php echo $title; ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
+	<meta property="og:image" content="<?php echo $ogpimg; ?>">
+	<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
+	<meta property="og:description" content="<?php bloginfo('description'); ?>">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="<?php echo $title; ?>">
+	<meta name="twitter:description" content="<?php bloginfo('description'); ?>">
+	<meta name="twitter:image" content="<?php echo $ogpimg; ?>">
+	<meta itemprop="image" content="<?php echo $ogpimg; ?>">
 	<?php wp_head(); ?>
 	<link rel="icon" type="image/x-icon" href="<?php echo common_links(); ?>/img/favicon.ico">
 	<?php
