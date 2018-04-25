@@ -4,6 +4,8 @@
 	$escapeurl = urlencode(get_permalink());
 	if(is_singular('gallery08')):
 		$title = get_the_title($post->ID).' | '.esc_html(get_post_type_object(get_post_type())->label).' | '.get_bloginfo('name');
+	elseif(is_singular('event')):
+		$title = get_the_title($post->ID).' | '.get_bloginfo('name');
 	else:
 		$title = get_bloginfo('name').' | '.get_bloginfo('description');
 	endif;
