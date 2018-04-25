@@ -11,6 +11,14 @@
 		$imgid = get_post_meta($post->ID, 'img', true);
 		$ogpimg = wp_get_attachment_image_src($imgid,'full')[0];
 		$title = get_the_title($post->ID).' | '.esc_html(get_post_type_object(get_post_type())->label).' | '.get_bloginfo('name');
+	elseif(is_singular('event')):
+		if(get_post_thumbnail_id($post->ID)):
+			$imgid = get_post_thumbnail_id($post->ID);
+			$ogpimg = wp_get_attachment_image_src($imgid,'full')[0];
+		else:
+			$ogpimg = $cmnogpimg;
+		endif;
+		$title = get_the_title($post->ID).' | '.get_bloginfo('name');
 	else:
 		$ogpimg = $cmnogpimg;
 		$title = get_bloginfo('name').' | '.get_bloginfo('description');
