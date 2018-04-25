@@ -412,13 +412,14 @@ footer{
 		line-height:1.6;
 	}
 	p{margin:1rem 0 0 1.2rem;}
-	>a{
-		margin:2rem 0 0 1.2rem;
+	.linkarea >a{
+		margin:2rem 1.2rem 0;
 		padding:.8rem 8rem;
 		text-align:center;
 		color:#fff;
 		background-color:#000;
 		display:inline-block;
+		vertical-align:top;
 		@media screen and (max-width:767px){
 			display:block;
 		}
@@ -460,7 +461,6 @@ footer{
 		li{margin-top:2rem;}
 	}
 }
-
 .galleryarea{
 	margin-top:32px;
 	font-size:0;
@@ -591,6 +591,8 @@ footer{
 	}
 	@media screen and (max-width:767px){
 		#infoarea{margin-bottom:16px;}
+		#infoarear{display:flex;}
+		#stmv-area{margin-right:24px;}
 	}
 	@media screen and (min-width:768px) and ( max-width:1024px){
 		section{display:flex;}
@@ -599,7 +601,7 @@ footer{
 			margin-right:2.5%;
 			flex:1;
 		}
-		#stmv-area{flex-basis:auto;}
+		#infoarear{flex-basis:auto;}
 	}
 	@media screen and (min-width:1025px){
 		section{display:flex;}
@@ -608,7 +610,51 @@ footer{
 			margin-right:2.5%;
 			flex:1;
 		}
-		#stmv-area{flex-basis:auto;}
+		#infoarear{flex-basis:auto;}
+	}
+}
+.snsbtnarea{
+	display:block;
+	.twbtn{
+		margin-right:1rem;
+	}
+	.fbbtn{
+		width:72px;
+		overflow:hidden !important;
+	}
+	@media screen and (max-width:767px){
+		.twbtn{padding-top:6px;}
+	}
+	@media screen and (min-width:768px){
+		.twbtn{padding-top:3px;}
+	}
+}
+@media screen and (min-width:768px){
+	#gallery-one .snsbtnarea{margin-top:16px;}
+	#event-one .twbtn{
+		top:50-9%;
+		-webkit-transform: translateY(-50%); /* Safari用 */
+		transform: translateY(-50%);
+		position: relative;
+	}
+}
+#event-one{
+	.snsbtnarea{
+		margin:2rem 0 0;
+		flex:1;
+		display:flex;
+		align-items:center;
+	}
+	@media screen and (max-width:767px){
+		.snsbtnarea{
+			justify-content:center;
+		}
+	}
+	@media screen and (min-width:768px){
+		.linkarea{
+			display:flex;
+			>a{flex-basis:auto;}
+		}
 	}
 }
 
@@ -784,19 +830,14 @@ footer{
 }
 #total{
 	table{border-collapse:collapse;}
-
 	th,td{
 		padding:.4rem .8rem;
 		border:1px solid $subc;
 		@include fz(14);
 	}
-
 	th{
 		color:$linkc;
 		background-color:rgba(161,115,23,.7);
 	}
-	td{
-		&:first-of-type, &:last-of-type{text-align:right;}
-	}
-
+	td{&:first-of-type, &:last-of-type{text-align:right;}}
 }

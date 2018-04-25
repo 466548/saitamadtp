@@ -26,7 +26,10 @@
 				<h2><?php the_title(); ?></h2>
 				<p class="date"><?php echo date('Y年n月j日', strtotime(CFS()->get('date'))); ?>（<?php echo $week[date('w', strtotime(CFS()->get('date')))]; ?>） <?php if(CFS()->get('start')): echo CFS()->get('start'); ?>〜<?php endif; ?></p>
 				<p class="place"><?php echo CFS()->get('place'); ?></p>
-				<a href="<?php echo CFS()->get('url'); ?>"><?php echo $btn; ?></a>
+				<div class="linkarea">
+					<a href="<?php echo CFS()->get('url'); ?>"><?php echo $btn; ?></a>
+					<?php get_template_part('parts', 'snsbtn'); ?>
+				</div>
 <?php
 	$fields1 = CFS()->get('satellite_loop');
 	if($fields1):

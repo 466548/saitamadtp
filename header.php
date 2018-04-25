@@ -18,11 +18,11 @@
 ?>
 	<meta property="og:title" content="<?php echo $title; ?>">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
+	<meta property="og:url" content="<?php echo get_permalink(); ?>">
 	<meta property="og:image" content="<?php echo $ogpimg; ?>">
 	<meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 	<meta property="og:description" content="<?php bloginfo('description'); ?>">
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<?php echo $title; ?>">
 	<meta name="twitter:description" content="<?php bloginfo('description'); ?>">
 	<meta name="twitter:image" content="<?php echo $ogpimg; ?>">
